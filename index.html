@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom — Flower Encyclopedia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero" id="home">
+    <nav class="navbar">
+      <a class="logo" href="#home">🌿 Bloom</a>
+      <div class="nav-links">
+        <a href="#flowers">Flowers</a>
+        <a href="#quiz">Flower Quiz</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow">A little encyclopedia of nature</p>
+      <h1>Discover the world of <span>flowers.</span></h1>
+      <p class="hero-text">
+        Explore beautiful flowers, learn their meanings, discover where they come from,
+        and find out which flower matches your personality.
+      </p>
+      <a class="button" href="#flowers">Explore Flowers ↓</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="flowers">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Flower encyclopedia</p>
+          <h2>Explore the collection</h2>
+        </div>
+        <p class="section-description">
+          Search by name or browse flowers by environment.
+        </p>
+      </div>
+
+      <div class="controls">
+        <input id="searchInput" type="search" placeholder="🔎 Search flowers..." aria-label="Search flowers">
+        <div class="filters">
+          <button class="filter active" data-filter="All">All</button>
+          <button class="filter" data-filter="Indoor">Indoor</button>
+          <button class="filter" data-filter="Outdoor">Outdoor</button>
+          <button class="filter" data-filter="Tropical">Tropical</button>
+          <button class="filter" data-filter="Desert">Desert</button>
+        </div>
+      </div>
+
+      <div class="flower-grid" id="flowerGrid"></div>
+      <p class="no-results" id="noResults">No flowers found. Try another search.</p>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+      <div class="quiz-card">
+        <div class="quiz-intro" id="quizIntro">
+          <p class="eyebrow">Fun personality quiz</p>
+          <h2>What flower are you?</h2>
+          <p>
+            Answer five quick questions and discover the flower that best matches
+            your personality.
+          </p>
+          <button class="button" id="startQuiz">Start the quiz →</button>
+        </div>
+
+        <div class="quiz-content hidden" id="quizContent">
+          <div class="quiz-progress">
+            <span id="questionNumber">Question 1 of 5</span>
+            <div class="progress-bar"><div id="progress"></div></div>
+          </div>
+          <h3 id="questionText"></h3>
+          <div class="answers" id="answers"></div>
+        </div>
+
+        <div class="quiz-result hidden" id="quizResult">
+          <div class="result-flower" id="resultEmoji"></div>
+          <p class="eyebrow">Your flower is</p>
+          <h2 id="resultName"></h2>
+          <p id="resultDescription"></p>
+          <button class="button secondary" id="restartQuiz">Try Again</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div>
+        <p class="eyebrow">About Bloom</p>
+        <h2>Small facts. Beautiful nature.</h2>
+      </div>
+      <div class="about-text">
+        <p>
+          Bloom is a simple flower encyclopedia designed to make learning about
+          plants more visual and enjoyable.
+        </p>
+        <div class="fact-list">
+          <div><strong>🌱 8</strong><span>Featured flowers</span></div>
+          <div><strong>🌍 5</strong><span>Growing environments</span></div>
+          <div><strong>💡 40+</strong><span>Nature facts</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌿 Bloom — Learn something beautiful.</p>
+    <p>Made as a course project.</p>
+  </footer>
+
+  <div class="modal hidden" id="flowerModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <div class="modal-box">
+      <button class="close-modal" id="closeModal" aria-label="Close">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-body">
+        <span class="tag" id="modalCategory"></span>
+        <h2 id="modalName"></h2>
+        <p class="scientific" id="modalScientific"></p>
+        <p id="modalDescription"></p>
+        <div class="details">
+          <div><span>🌍 Origin</span><strong id="modalOrigin"></strong></div>
+          <div><span>🌸 Meaning</span><strong id="modalMeaning"></strong></div>
+          <div><span>☀️ Season</span><strong id="modalSeason"></strong></div>
+          <div><span>🌱 Environment</span><strong id="modalEnvironment"></strong></div>
+        </div>
+        <div class="facts-box">
+          <h3>Interesting facts</h3>
+          <ul id="modalFacts"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
